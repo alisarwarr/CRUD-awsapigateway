@@ -1,0 +1,232 @@
+{
+  "version": "21.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "AwsRestapiStacks.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "AwsRestapiStacks.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "AwsRestapiStacks": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "AwsRestapiStacks.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0735f225136828197712067cb07041a9c35d6f142369992b1faf8fd73cff6e2a.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "AwsRestapiStacks.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "AwsRestapiStacks.assets"
+      ],
+      "metadata": {
+        "/AwsRestapiStacks/myLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myLambdaServiceRole5879F9B1"
+          }
+        ],
+        "/AwsRestapiStacks/myLambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myLambdaServiceRoleDefaultPolicy3782F84B"
+          }
+        ],
+        "/AwsRestapiStacks/myLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myLambda696B54F1"
+          }
+        ],
+        "/AwsRestapiStacks/myTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myTableA48C5C70"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApi10332170"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiDeployment12138A1E0ecf269bca01acb372d9d8c948a1fa79"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiDeploymentStageprodBF46AA96"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiEndpointF2DFDFB1"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/books/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApibooks7DC13D08"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/books/GET/ApiPermission.AwsRestapiStacksmyApi5622313E.GET..books": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApibooksGETApiPermissionAwsRestapiStacksmyApi5622313EGETbooks79474BDA"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/books/GET/ApiPermission.Test.AwsRestapiStacksmyApi5622313E.GET..books": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApibooksGETApiPermissionTestAwsRestapiStacksmyApi5622313EGETbooks443E82EC"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/books/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApibooksGET3A50FC4B"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/books/POST/ApiPermission.AwsRestapiStacksmyApi5622313E.POST..books": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApibooksPOSTApiPermissionAwsRestapiStacksmyApi5622313EPOSTbooks1DF42E01"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/books/POST/ApiPermission.Test.AwsRestapiStacksmyApi5622313E.POST..books": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApibooksPOSTApiPermissionTestAwsRestapiStacksmyApi5622313EPOSTbooks2A7414EF"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/books/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApibooksPOSTC0D213AF"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/books/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApibooksOPTIONS006A0273"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/{id}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiid5E0E5101"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/{id}/GET/ApiPermission.AwsRestapiStacksmyApi5622313E.GET..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiidGETApiPermissionAwsRestapiStacksmyApi5622313EGETid62ED5329"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/{id}/GET/ApiPermission.Test.AwsRestapiStacksmyApi5622313E.GET..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiidGETApiPermissionTestAwsRestapiStacksmyApi5622313EGETid15522AA5"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/{id}/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiidGET75D80546"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/{id}/DELETE/ApiPermission.AwsRestapiStacksmyApi5622313E.DELETE..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiidDELETEApiPermissionAwsRestapiStacksmyApi5622313EDELETEid5E1D015A"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/{id}/DELETE/ApiPermission.Test.AwsRestapiStacksmyApi5622313E.DELETE..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiidDELETEApiPermissionTestAwsRestapiStacksmyApi5622313EDELETEid1BCD9789"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/{id}/DELETE/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiidDELETEB0B60FB2"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/{id}/PATCH/ApiPermission.AwsRestapiStacksmyApi5622313E.PATCH..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiidPATCHApiPermissionAwsRestapiStacksmyApi5622313EPATCHid11E5F8B8"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/{id}/PATCH/ApiPermission.Test.AwsRestapiStacksmyApi5622313E.PATCH..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiidPATCHApiPermissionTestAwsRestapiStacksmyApi5622313EPATCHid1CDDBA91"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/{id}/PATCH/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiidPATCH08190394"
+          }
+        ],
+        "/AwsRestapiStacks/myApi/Default/{id}/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myApiidOPTIONSCDAEA995"
+          }
+        ],
+        "/AwsRestapiStacks/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/AwsRestapiStacks/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/AwsRestapiStacks/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/AwsRestapiStacks/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "AwsRestapiStacks"
+    }
+  }
+}
